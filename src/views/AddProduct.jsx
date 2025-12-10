@@ -17,6 +17,7 @@ useEffect(()=>{
  } else{
     reset();
  }
+ 
 },[])
 
 function storeProductDetails(data){
