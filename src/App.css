@@ -1,0 +1,296 @@
+/* .App{
+  background-image: url("src/assets/Rough-waters.jpg");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app-icon{
+  font-size: 35px;
+}
+ */
+
+ /* 🌫️ Global Background */
+body {
+  background: url("src/assets/Rough-waters.jpg") center/cover no-repeat fixed;
+  backdrop-filter: blur(4px);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📦 Header */
+.bg-primary {
+  background: rgba(0, 136, 255, 0.35) !important;
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.app-icon {
+  font-size: 35px;
+  margin-right: 10px;
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+
+/* 🔘 Action Buttons */
+.btn-light {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+/* 📝 Forms Style */
+form {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #0e0d0d !important;
+  border: 1px solid rgba(0, 0, 0, 0.35) !important;
+  border-radius: 10px !important;
+  
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #00B4FF !important;
+  box-shadow: 0 0 8px #00B4FF;
+}
+
+/* 📊 Table Styling */
+table {
+  background: rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  overflow: hidden;
+  color: #fff !important;
+}
+
+thead {
+  background: rgba(0, 136, 255, 0.6);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 🌗 Dark Mode Toggle */
+body.dark-mode {
+  background: url("src/assets/Rough-waters.jpg") center/cover no-repeat fixed;
+  color: #e0e0e0 !important;
+}
+
+/* Header Dark Mode */
+body.dark-mode .bg-primary {
+  background: rgba(13, 13, 13, 0.6) !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+/* Buttons */
+body.dark-mode .btn-light {
+  
+  background: rgba(0, 255, 255, 0.2) !important;
+  border: 1px solid rgba(0, 255, 255, 0.4) !important;
+}
+
+body.dark-mode .btn-light:hover {
+  background: rgba(0, 255, 255, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+/* Forms */
+body.dark-mode form {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 255, 255, 0.35);
+}
+
+/* Inputs */
+body.dark-mode input, 
+body.dark-mode select,
+body.dark-mode textarea {
+  background: rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid rgba(0,255,255,0.35) !important;
+  color: #060606 !important;
+}
+
+/* Table */
+body.dark-mode table {
+  background: rgba(0, 0, 0, 0.40);
+  border: 1px solid rgba(0,255,255,0.4);
+}
+
+body.dark-mode thead {
+  background: rgba(0, 255, 200, 0.3);
+}
+
+body.dark-mode tbody tr:hover {
+  background: rgba(0,255,255,0.15);
+}
+
+ /* Checkbox Glow
+body.dark-mode .form-check-input:checked {
+  box-shadow: 0px 0px 6px #00ffff;
+}
+.mode-toggle {
+  position: absolute;
+  right: 270px;
+  top: 12px;
+}  */
+
+/* Hide the default checkbox */
+.container input {
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
+}
+
+.container {
+   display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Space between text & checkbox */
+  cursor: pointer;
+  user-select: none;
+  font-size: 20px;
+  position: relative;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 1.3em;
+ width: 1.3em;
+ background: black;
+ border-radius: 50px;
+ transition: all 0.7s;
+ --spread: 20px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ background: black;
+ box-shadow: -10px -10px var(--spread) 0px #5B51D8, 0 -10px var(--spread) 0px #833AB4, 10px -10px var(--spread) 0px #E1306C, 10px 0 var(--spread) 0px #FD1D1D, 10px 10px var(--spread) 0px #F77737, 0 10px var(--spread) 0px #FCAF45, -10px 10px var(--spread) 0px #FFDC80;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+ display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+ left: 0.45em;
+ top: 0.25em;
+ width: 0.25em;
+ height: 0.5em;
+ border: solid #f0f0f0;
+ border-width: 0 0.15em 0.15em 0;
+ transform: rotate(45deg);
+}
+
+/* 🌗 Toggle Container (Align properly in header) */
+.dark-toggle-container {
+  display: flex;
+  align-items: center;
+  
+}
+
+/* Hide real checkbox */
+#darkToggle {
+  display: none;
+}
+
+/* Toggle Background */
+.toggle-label {
+  height: 32px;
+  width: 65px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Knob */
+.toggle-label::before {
+  content: "";
+  height: 26px;
+  width: 26px;
+  background: #c8c8c8;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* CHECKED = DARK → Slide knob RIGHT */
+#darkToggle:checked + .toggle-label {
+  background: rgba(0,255,255,0.45);
+}
+
+#darkToggle:checked + .toggle-label::before {
+  left: 35px;
+  background: #000000;
+}
+/* Pagination customization (bootstrap + react-paginate) */
+.pagination { gap: 6px; display:flex; list-style:none; padding-left:0; }
+.pagination .page-link { border-radius: 8px; padding: 6px 10px; }
+.pagination .active .page-link { background: #007bff; color:#fff; border-color: #007bff; }
+
+/* SearchBar small spacing */
+.mb-3.d-flex {
+   gap: 12px; 
+   align-items:
+    center; 
+}
+.form-control {
+  border-radius: 30px;
+  padding-left: 15px;
+}
+.btn-secondary {
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  margin: 10px 0;
+  
+}
+
+.search-container input {
+  width: 500px;         /* Make input smaller */
+  height: 40px;
+  padding: 5px 10px;    /* Reduce padding */
+  font-size: 14px;
+  border-radius: 6px;
+  
+}
